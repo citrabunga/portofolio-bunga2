@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+body {
+    background-image: radial-gradient(circle, rgb(80, 162, 240),rgba(107, 165, 240, 0.8));
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    background: linear-gradient(145deg, #f0f0f0, #cfcfcf);
+    border: 1px solid #ccc;
+}
+.theme-toggler {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 20px;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+}
+.theme-toggler.active {
+    color: #333;
+    transform: rotate(225deg);
+}
+.theme-toggler::before {
+    content: '🌞';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 30px;
+}
+.theme-toggler.active::before {
+    content: '🌜';
+}
+#display {
+    margin: 0 10px;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 40px;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    color: #333;
+}
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+    background: #aaa;
+}
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    color: #333;
+}
+button:hover {
+    transform: scale(1.1);
+}
+button#equal {
+    height: 130px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #a0ffa0, #70ff70);
+}
+button#clear {
+    background: linear-gradient(145deg, #ffa0a0, #ff7070);
+}
+button.btn-number {
+    background: linear-gradient(145deg, #a0d1ff, #70a1ff);
+}
+button.btn-operator {
+    background: linear-gradient(145deg, #fca0ff, #fa70ff);
+}
+button.btn-equal {
+    background: linear-gradient(145deg, #a0ffa0, #70ff70);
+}
+button#clear {
+    color: #fff;
+}
+.calculator.dark {
+    background: linear-gradient(145deg, #333, #111);
+    border: 1px solid #555;
+}
+.calculator.dark #display {
+    color: #f8fafb;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid #555;
+}
+.calculator.dark button#clear {
+    background: linear-gradient(145deg, #2d191e, #1b0f10);
+    color: #bd3740;
+}
+.calculator.dark button.btn-number {
+    background: linear-gradient(145deg, #1b2f38, #101f27);
+    color: #f8fafb;
+}
+.calculator.dark button.btn-operator {
+    background: linear-gradient(145deg, #2e1f39, #1b1123);
+    color: #aa00a4;
+}
+.calculator.dark button.btn-equal {
+    background: linear-gradient(145deg, #223323, #111a11);
+    color: #ffffff;
+}
